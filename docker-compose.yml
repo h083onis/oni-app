@@ -1,0 +1,13 @@
+services:
+  app-db:
+    image: my-sql:8
+    command: --collation-server=utf8mb4_0900_bin --transaction-isolation=READ-COMMITTED
+    restart: always
+    enviroment:
+      MYSQL_ROOT_PASSWORD: appPass
+      MYSQL_DATABASE: app
+      MYSQL_USER: oni
+      MYSQL_PASSWORD: oniPass
+      TZ: Asia/Tokyo
+    ports:
+      - 53306:3306
