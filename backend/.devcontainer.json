@@ -1,0 +1,30 @@
+{
+	"name": "Django",
+	// Dockerfileでイメージ・コンテナを作成
+	"dockerComposeFile": "../docker-compose.yml",
+	// VS Codeのワークスペースフォルダ
+	"workspaceFolder": "/backend",
+	// 使用するサービス
+	"service": "backend-app",
+	"runServices": [
+		"backend-app",
+		"app-db"
+	],
+	"customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+				"ms-python.python",  // Python 拡張機能
+				"ms-python.vscode-pylance",  // Pylance 拡張機能 (より良い補完機能)
+				"ms-toolsai.jupyter"  // Jupyter 拡張機能 (オプション)
+			],
+			"pylint.args":[
+				"--load-plugins",
+				"pylint_django",
+				"--django-settings-module",
+				"config.settings.development"
+			]
+        }
+    },
+	"shutdownAction": "stopCompose"
+}

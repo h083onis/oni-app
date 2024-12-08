@@ -12,7 +12,7 @@ RUN yarn install
 # ソースコードをコピー
 COPY . .
 
-##開発時
+# デフォルトの実行コマンド（docker-compose で上書き可能）
 CMD ["yarn", "dev"]
 
 

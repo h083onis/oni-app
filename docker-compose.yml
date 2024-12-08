@@ -16,6 +16,7 @@ services:
       - "3000:3000"
     env_file:
       - .env
+    tty: true
 
   backend-app:
     build:
@@ -27,6 +28,7 @@ services:
       - "5000:5000"
     env_file:
       - .env
+    tty: true
   
   app-db:
     image: mysql:8
